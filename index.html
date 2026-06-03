@@ -14,10 +14,11 @@
 <body>
     
     <select id="select-student"></select>
-    <h1 id="display-date"></h1>
+    <h2 id="display-date"></h2>
     <br><br>
     <h1 id="display-student"></h1>
     <hr>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
     <a href="short_vowel_a.html">Short Vowel 'a'</a>
     <script>
         const arrayStudents = [
@@ -32,7 +33,7 @@
         const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const todayIndex = new Date().getDay();
         const todayName = daysOfWeek[todayIndex];
-        displayDate.textContent = `Happy ${todayName}!`;
+        displayDate.textContent = `Happy ${todayName}! 📅`;
 
         const defaultOption = document.createElement('option');
         defaultOption.textContent = "Choose...";
