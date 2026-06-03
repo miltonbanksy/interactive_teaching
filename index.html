@@ -7,8 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Menu</h1>
-    <a href="short_vowel_a.html">Short Vowel 'a'</a>
     
+    <select id="select-student"></select>
+    <h1 id="display-date">Happy Tuesday</h1>
+    <hr>
+    <a href="short_vowel_a.html">Short Vowel 'a'</a>
+    <script>
+        const arrayStudents = [
+            {"name_full": "Lee Sujin", "name_friendly": "Sujin"}
+        ];
+
+        const selectStudent = document.querySelector('#select-student');
+        const displayDate = document.querySelector('#display-date');
+
+        const defaultOption = document.createElement('option');
+        defaultOption.textContent = "Choose...";
+        defaultOption.value = "";
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+
+        selectStudent.prepend(defaultOption);
+
+        arrayStudents.forEach((student) => {
+            const option = document.createElement('option');
+            option.textContent = student.name_full;
+            option.value = student.name_full;
+            selectStudent.appendChild(option);
+        });
+
+        
+        
+        selectStudent.addEventListener('change', (event) => {
+            const selectedFullName = event.target.value;
+
+            const matchedStudent = arrayStudents.find(student => student.name_full === selectedFullName);
+
+            if (matchedStudent) {
+                displayDate.textContent = `Hello ${matchedStudent.name_friendly}`;
+            }
+        });
+    </script>
 </body>
 </html>
