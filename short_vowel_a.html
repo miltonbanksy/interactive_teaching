@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sujin's Page</title>
+    <title>Short Vowel a</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Short Vowel a</h1>
-    <h2>Cap</h2>
+    <h2 id="display-cap-type">cap</h2>
     <button id="btn-rnd-cap">Random Cap!</button>
     <img class="img-thumbs" id="img-cap">
     <script>
-        const arrayCaps = [
-            "cap_blue.png",
-            "cap_green.png",
-            "cap_orange.png",
-            "cap_pink.png",
-            "cap_red.png",
-            "cap_white.png",
-            "cap_yellow.png",
+        const objCaps = [
+            {"sentence": "A blue cap", "image": "cap_blue.png"},
+            {"sentence": "A green cap", "image": "cap_green.png"},
+            {"sentence": "An orange cap", "image": "cap_orange.png"},
+            {"sentence": "A pink cap", "image": "cap_pink.png"},
+            {"sentence": "A red cap", "image": "cap_red.png"},
+            {"sentence": "A white cap", "image": "cap_white.png"},
+            {"sentence": "A yellow cap", "image": "cap_yellow.png"}
         ];
 
         const btnRndCap = document.querySelector("#btn-rnd-cap");
         const imgCap = document.querySelector("#img-cap");
+        const displayCapType = document.querySelector('#display-cap-type');
 
         btnRndCap.addEventListener('click', () => {
-            const rndCapIndex = Math.floor(Math.random() * arrayCaps.length);
-            const rndCap = arrayCaps[rndCapIndex];
-            imgCap.src = rndCap;
+            const rndCapIndex = Math.floor(Math.random() * objCaps.length);
+            const rndCap = objCaps[rndCapIndex];
+            imgCap.src = rndCap.image;
+            displayCapType.innerHTML = rndCap.sentence;
         });
     </script>
 </body>
