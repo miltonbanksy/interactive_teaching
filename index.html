@@ -4,21 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Teaching</title>
+    <!-- 1. Import the Fredoka font from Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
     <select id="select-student"></select>
-    <h1 id="display-date">Happy Tuesday</h1>
+    <h1 id="display-date"></h1>
+    <br><br>
+    <h1 id="display-student"></h1>
     <hr>
     <a href="short_vowel_a.html">Short Vowel 'a'</a>
     <script>
         const arrayStudents = [
+            {"name_full": "Cho Eugene", "name_friendly": "Eugene"},
             {"name_full": "Lee Sujin", "name_friendly": "Sujin"}
         ];
 
         const selectStudent = document.querySelector('#select-student');
         const displayDate = document.querySelector('#display-date');
+        const displayStudent = document.querySelector('#display-student');
+
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const todayIndex = new Date().getDay();
+        const todayName = daysOfWeek[todayIndex];
+        displayDate.textContent = `Happy ${todayName}!`;
 
         const defaultOption = document.createElement('option');
         defaultOption.textContent = "Choose...";
@@ -35,15 +49,13 @@
             selectStudent.appendChild(option);
         });
 
-        
-        
         selectStudent.addEventListener('change', (event) => {
             const selectedFullName = event.target.value;
 
             const matchedStudent = arrayStudents.find(student => student.name_full === selectedFullName);
 
             if (matchedStudent) {
-                displayDate.textContent = `Hello ${matchedStudent.name_friendly}`;
+                displayStudent.textContent = `Hello ${matchedStudent.name_friendly} 😎`;
             }
         });
     </script>
