@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sujin's Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Short Vowel a</h1>
+    <h2>Cap</h2>
+    <button id="btn-rnd-cap">Random Cap!</button>
+    <img class="img-thumbs" id="img-cap">
+    <script>
+        const arrayCaps = [
+            "cap_blue.png",
+            "cap_green.png",
+            "cap_orange.png",
+            "cap_pink.png",
+            "cap_red.png",
+            "cap_white.png",
+            "cap_yellow.png",
+        ];
+
+        const btnRndCap = document.querySelector("#btn-rnd-cap");
+        const imgCap = document.querySelector("#img-cap");
+
+        btnRndCap.addEventListener('click', () => {
+            const rndCapIndex = Math.floor(Math.random() * arrayCaps.length);
+            const rndCap = arrayCaps[rndCapIndex];
+            imgCap.src = rndCap;
+        });
+    </script>
+</body>
+</html>
