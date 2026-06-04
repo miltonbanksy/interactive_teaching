@@ -33,7 +33,7 @@
         const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const todayIndex = new Date().getDay();
         const todayName = daysOfWeek[todayIndex];
-        displayDate.textContent = `Happy ${todayName}! 📅`;
+        displayDate.textContent = `Happy ${todayName}!`;
 
         const defaultOption = document.createElement('option');
         defaultOption.textContent = "Choose...";
@@ -56,7 +56,7 @@
             const matchedStudent = arrayStudents.find(student => student.name_full === selectedFullName);
 
             if (matchedStudent) {
-                displayStudent.textContent = `Hello ${matchedStudent.name_friendly} 😎`;
+                displayStudent.textContent = `Hi ${matchedStudent.name_friendly} 😎`;
             }
         });
     </script>
