@@ -7,31 +7,60 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Short Vowel a</h1>
-    <h2 id="display-cap-type">cap</h2>
+    
+    <h1 id="display-cap-type"></h1>
     <button id="btn-rnd-cap">Random Cap!</button>
     <img class="img-thumbs" id="img-cap">
+
+    <button id="btn-rnd-vowelA">Object</button>
+    <img class="img-thumbs" id="img-vowelA">
     <script>
         const objCaps = [
-            {"sentence": "A blue cap", "image": "cap_blue.png"},
-            {"sentence": "A green cap", "image": "cap_green.png"},
-            {"sentence": "An orange cap", "image": "cap_orange.png"},
+            {"sentence": "A blue cap", "image": "cap_blue.png", "color": "#006400"},
+            {"sentence": "A green cap", "image": "cap_green.png", "color": "green"},
+            {"sentence": "An orange cap", "image": "cap_orange.png", "color": "green"},
             {"sentence": "A pink cap", "image": "cap_pink.png"},
             {"sentence": "A red cap", "image": "cap_red.png"},
             {"sentence": "A white cap", "image": "cap_white.png"},
             {"sentence": "A yellow cap", "image": "cap_yellow.png"}
         ];
 
+        const objA = [
+            "apple_green.jpg",
+            "cap.jpg",
+            "cat.jfif",
+            "dam.jpg",
+            "dog.jfif",
+            "jam.jpg",
+            "map.jpg",
+            "mouse.jfif",
+            "tap.jpg"
+        ]
+
         const btnRndCap = document.querySelector("#btn-rnd-cap");
         const imgCap = document.querySelector("#img-cap");
         const displayCapType = document.querySelector('#display-cap-type');
+        const redCap = "";
 
         btnRndCap.addEventListener('click', () => {
+            displayCapType.innerHTML = "";
             const rndCapIndex = Math.floor(Math.random() * objCaps.length);
-            const rndCap = objCaps[rndCapIndex];
+            rndCap = objCaps[rndCapIndex];
             imgCap.src = rndCap.image;
-            displayCapType.innerHTML = rndCap.sentence;
+            
         });
+
+        imgCap.addEventListener('click', () => {
+            displayCapType.innerHTML = rndCap.sentence;
+        })
+
+        const btnRndVowelA = document.querySelector('#btn-rnd-vowelA');
+        const imgVowelA = document.querySelector('#img-vowelA');
+
+        btnRndVowelA.addEventListener('click', () => {
+            const imgVowelAIndex = Math.floor(Math.random() * objA.length);
+            imgVowelA.src = objA[imgVowelAIndex];
+        })
     </script>
 </body>
 </html>
