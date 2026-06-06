@@ -12,6 +12,7 @@ body {
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
+    padding-bottom: 300px;
 }
 
 h1 {
@@ -74,5 +75,6 @@ h2 {
         }
 
 .img-thumbs {
-    width: 200px;
+    width: 400px;
+    height: 400px;
 }
