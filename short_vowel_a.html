@@ -12,8 +12,11 @@
     <button id="btn-rnd-cap">Random Cap!</button>
     <img class="img-thumbs" id="img-cap">
 
-    <button id="btn-rnd-vowelA">Object</button>
+    <button id="btn-rnd-vowelA">Short Vowel a</button>
     <img class="img-thumbs" id="img-vowelA">
+
+    <button id="btn-rnd-vowelI">Shor Vowel i</button>
+    <img class="img-thumbs", id="img-vowelI">
     
     <script>
         const objCaps = [
@@ -26,7 +29,7 @@
             {"sentence": "A yellow cap", "image": "cap_yellow.png"}
         ];
 
-        const objA = [
+        const array_a = [
             "apple_green.jpg",
             "baby.webp",
             "cap.jpg",
@@ -43,7 +46,11 @@
             "panda2.jfif",
             "table.jpg",
             "tap.jpg"
-        ]
+        ];
+
+        const array_i = [
+
+        ];
 
         const btnRndCap = document.querySelector("#btn-rnd-cap");
         const imgCap = document.querySelector("#img-cap");
@@ -66,8 +73,8 @@
         const imgVowelA = document.querySelector('#img-vowelA');
 
         btnRndVowelA.addEventListener('click', () => {
-            const imgVowelAIndex = Math.floor(Math.random() * objA.length);
-            imgVowelA.src = objA[imgVowelAIndex];
+            const imgVowelAIndex = Math.floor(Math.random() * array_a.length);
+            imgVowelA.src = array_a[imgVowelAIndex];
         })
     </script>
 </body>
