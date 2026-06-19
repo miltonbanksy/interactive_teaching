@@ -15,8 +15,11 @@
     <button id="btn-rnd-vowelA">Short Vowel a</button>
     <img class="img-thumbs" id="img-vowelA">
 
-    <button id="btn-rnd-vowelI">Shor Vowel i</button>
+    <button id="btn-rnd-vowelI">Short Vowel i</button>
     <img class="img-thumbs", id="img-vowelI">
+
+    <button id="btn-rnd-vowelI_b">Short Vowel i b</button>
+    <img class="img-thumbs", id="img-vowelI_b">
     
     <script>
         const objCaps = [
@@ -48,9 +51,50 @@
             "tap.jpg"
         ];
 
-        const array_i = [
-
+        const array_i_b = [
+            "bib1.JFIF",
+            "bib2.JFIF",
+            "bib3.JFIF",
+            "book1.JFIF",
+            "book2.JFIF",
+            "book3.JFIF",
+            "dig1.JFIF",
+            "dig2.JFIF",
+            "dig3.JFIF",
+            "fin1.JFIF",
+            "fin2.JFIF",
+            "fin3.PNG",
+            "gorilla1.JFIF",
+            "gorilla2.JFIF",
+            "gorilla3.JFIF",
+            "igloo1.JFIF",
+            "igloo2.JFIF",
+            "igloo3.JFIF",
+            "lid1.JFIF",
+            "lid2.JFIF",
+            "lid3.JFIF",
+            "nut1.JFIF",
+            "nut2.JFIF",
+            "nut3.JFIF",
+            "pin1.JFIF",
+            "pin2.PNG",
+            "pin3.PNG",
+            "rib1.JFIF",
+            "rib2.JFIF",
+            "rib3.JFIF",
+            "wig1.JFIF",
+            "wig2.JFIF",
+            "wig3.JFIF"
         ];
+
+        const btnRndVowelI_b = document.querySelector('#btn-rnd-vowelI_b');
+        const displayImgVowelI_b = document.querySelector('#img-vowelI_b');
+
+        btnRndVowelI_b.addEventListener('click', () => {
+            const index = Math.floor(Math.random() * array_i_b.length);
+            const img = array_i_b[index];
+            displayImgVowelI_b.src = img;
+        });
 
         const btnRndCap = document.querySelector("#btn-rnd-cap");
         const imgCap = document.querySelector("#img-cap");
